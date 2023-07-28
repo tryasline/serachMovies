@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import store from 'store';
 import PropTypes from 'prop-types';
-
 import { Rate } from 'antd';
 
 import './RateStars.css';
