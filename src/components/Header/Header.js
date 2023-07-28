@@ -1,8 +1,7 @@
-import React from "react";
-import { Tabs } from "antd";
-
-import "./Header.css";
-import PropTypes from "prop-types";
+import React from 'react';
+import { Tabs } from 'antd';
+import './Header.css';
+import PropTypes from 'prop-types';
 
 function Header({ changeTab }) {
   const { TabPane } = Tabs;

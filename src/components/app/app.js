@@ -1,10 +1,9 @@
 import { Component } from 'react';
 import store from 'store';
-
 import { Alert, Empty, Layout, Pagination, Space, Spin } from 'antd';
 import { format, parseISO } from 'date-fns';
-import { Context } from '../GenresContext/GenresContext';
 
+import { Context } from '../GenresContext/GenresContext';
 import MovieDbService from '../services/MovieDbService';
 import Header from '../Header';
 import Search from '../Search';

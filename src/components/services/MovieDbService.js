@@ -1,7 +1,7 @@
 export default class MovieDbService {
-  apiKey = "9420f971c77382011b10789475bfd7fa";
+  apiKey = '9420f971c77382011b10789475bfd7fa';
 
-  baseUrl = "https://api.themoviedb.org/3/";
+  baseUrl = 'https://api.themoviedb.org/3/';
 
   getDataFromServer = async (url) => {
     try {
@@ -12,12 +12,12 @@ export default class MovieDbService {
       return await res.json();
     } catch (err) {
       // eslint-disable-next-line no-console
-      console.error("Возникла проблема с fetch запросом: ", err.message);
+      console.error('Возникла проблема с fetch запросом: ', err.message);
       return err.message;
     }
   };
 
-  searchMovies = async (searchQuery = "return", pageNumber = 1) => {
+  searchMovies = async (searchQuery = 'return', pageNumber = 1) => {
     const url = `${this.baseUrl}search/movie?api_key=${this.apiKey}&include_adult=false&query=${searchQuery}&page=${pageNumber}`;
     const body = await this.getDataFromServer(url);
     return body;
@@ -41,22 +41,22 @@ export default class MovieDbService {
       value: rate,
     };
     await fetch(url, {
-      method: "POST",
-      headers: { "Content-Type": "application/json;charset=utf-8" },
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json;charset=utf-8' },
       body: JSON.stringify(body),
     }).catch((err) => {
       // eslint-disable-next-line no-console
-      console.error("Возникла проблема с fetch запросом: ", err.message);
+      console.error('Возникла проблема с fetch запросом: ', err.message);
     });
   };
 
   deleteRateMovie = async (id, guestSessionToken) => {
     const url = `${this.baseUrl}movie/${id}/rating?api_key=${this.apiKey}&guest_session_id=${guestSessionToken}`;
     const headers = {
-      "Content-Type": "application/json;charset=utf-8",
+      'Content-Type': 'application/json;charset=utf-8',
     };
     await fetch(url, {
-      method: "DELETE",
+      method: 'DELETE',
       headers,
     });
   };
